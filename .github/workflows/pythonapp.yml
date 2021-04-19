@@ -25,4 +25,4 @@ jobs:
         cd ./python
         echo "${{ secrets.RJ }}" | docker login -u "ravichandranj" --password=$ {{ secrets.RJ }}
         docker image build -t ravichandranj/gitops:hellov1.2 .
-        docker push [your docker hub username here]/gitops:hellov1.2
+        docker push ravichandranj/gitops:hellov1.2
