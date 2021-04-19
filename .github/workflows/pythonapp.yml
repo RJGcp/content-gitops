@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'python/*'
+    - '*'
       
 jobs:
   build:
@@ -23,6 +24,6 @@ jobs:
     - name: Build & Push Image
       run: |
         cd ./python
-        echo "${{ secrets.DOCKERPW }}" | docker login -u "ravichandranj" --password=$ {{ secrets.RJ }}
+        echo "${{ secrets.RJ }}" | docker login -u "ravichandranj" --password=$ {{ secrets.RJ }}
         docker image build -t ravichandranj/gitops:hellov1.2 .
         docker push [your docker hub username here]/gitops:hellov1.2
